@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .login-container {
+            background-color: transparent;
+            padding: 30px;
+            /* Increase padding for more spacing inside the white border */
+            border: 2px solid white;
+            border-radius: 5px;
+            text-align: center;
+            width: 200%;
+            max-width: 400px;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding-bottom: 50px;
+
+        }
+
+        .login-container img {
+            width: 500px;
+            margin-bottom: 30px;
+
+        }
+
+        .login-container h1 {
+            color: white;
+            font-size: 30px;
+            /* Increase font size for the title */
+            padding-bottom: 25px;
+            /* Reduce padding for the title */
+        }
+
+        .login-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+
+        .new-user-link {
+            color: white;
+            text-decoration: none;
+            /* Remove underlines from the link */
+            margin-top: 35px;
+            /* Add spacing above the link */
+            font-size: 16px;
+        }
+
+        .new-user-link:hover {
+            text-decoration: underline;
+            /* Underline the link on hover */
+        }
+
+        /* Style the input boxes with white border */
+        input[type="text"],
+        input[type="password"] {
+            background-color: transparent;
+            border: 1px solid white;
+            padding: 15px;
+            /* Increase padding for the input boxes */
+            border-radius: 5px;
+            width: 350px;
+            margin-bottom: 20px;
+            /* Increase margin for spacing between input boxes */
+            color: white;
+            font-size: 16px;
+            /* Increase font size for the input boxes */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" width="250">
+    </div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <input type="text" placeholder="Email" name="email">
+            <br><br>
+            <input type="password" placeholder="Password" name="password">
+            <br><br>
+            <button type="button" class="login-button" onclick="submitForm()">Login</button>
+
+        </form>
+        <a href="html/signup.html" class="new-user-link">New User? SignUp Here</a>
+
+    </div>
+
+    <script>
+        function submitForm() {
+            // Get form input values
+
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            // Create an object with the user's login data
+            const loginData = {
+                email: email,
+                password: password
+            };
+
+            // Send the data to the PHP script using AJAX
+            fetch("php/login.php", {
+                method: "POST",
+                body: JSON.stringify(loginData),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+
+                        alert("Registration successful!");
+
+                        sessionStorage.setItem('email', email);
+
+
+                        window.location.href = "html/home.html";
+                    } else {
+                        alert("Registration failed. Please try again.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again later.");
+                });
+
+        }
+
+    </script>
+</body>
+
+</html>

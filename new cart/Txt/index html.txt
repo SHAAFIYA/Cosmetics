@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <title>Cosmetics</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div id="container1">
+        <div id="top">
+            <div id="left">
+                <form id="searchForm">
+                    <input id="searchInput" type="text" placeholder="SEARCH">
+                    <button type="button" id="searchButton">Search</button>
+                </form>
+            </div>
+
+            <div id="center">
+                <div id="title">
+                    <a href = 'index.html'><img src="logo.png"></a>
+                </div>
+
+            </div>
+            <div id="right">
+                <div>
+                    <div><a href="login.html">JOIN</a></div>
+                    <div class="rightImage" ><a href="cart.html"><img src="Bag-White.png"></a></div>
+                </div>
+            </div>
+        </div>
+        <div id="discount">
+            
+        </div>
+        <!-- Header End -->
+
+        <!-- Product Showcase -->
+        <div id="products">
+            <img src="Black_Image.png">
+            <img src="Set1.png">
+            <div id="content">
+                <p class="smallTitle">NEW</p>
+                <p class="title">ALL-IN <br>SKIN DUO</p>
+                <p>Everything you need for fresh, healthy-looking skin in one full-size set:<br>Vitamin Enriched Face Base and Skin Long-Wear Weightless Foundation.</p>
+                <p>A $114 value, yours for $72.</p>
+                <button class="whiteButton">CREATE YOUR SET</button>
+            </div>
+        </div>
+    </div>
+    <!-- Container-1 End -->
+
+    <!-- Container-2 Start -->
+    <div id="container2">
+        <p id="title2" class="title">GOTTA HAVE IT</p>
+        <div id="tabs2">
+            <a>NEW</a>
+            <a>TRENDING NOW</a>
+            <a>SKINCARE</a>
+        </div>
+        <div id="products2">
+        </div>
+    </div>
+    <!-- Container-2 End -->
+
+    <!-- New Container Start -->
+    <div id="newContainer">
+        <div>
+            <div id="newImage">
+                <img src="Set2.png">
+            </div>
+        </div>
+        <div>
+            <div id="newContent">
+                <p class="smallTitle">NEW</p>
+                <p class="title" id="largeTitle">ALL-IN <br>SKIN DUO</p>
+                <p>Everything you need for fresh, healthy-looking skin: a full-size set of our bestselling foundation and primer.</p>
+                <p>A $114 value, yours for $72.</p>
+                <button class="whiteButton">CREATE YOUR SET</button>
+            </div>
+        </div>
+    </div>
+    <!-- New Container End -->
+
+    <!-- Container-3 Start -->
+    <div id="container3">
+        <div class="titleBox" id="title2">
+            <p class="titleTop">DATE-NIGHT BEAUTY</p>
+            <p class="title">EASY ON THE EYES</p>
+            <p>Three quick steps to creating an eye-catching look that stays the night.</p>
+        </div>
+        <div id="photos3">
+            <div>
+                <img src="Eyeliner1.png">
+                <p class="smallTitle"><b>ADD CONTRAST</b></p>
+                <p>Swipe <b>Long-Wear Cream Shadow Stick in Dusty Mauve</b> all over lids and line with <b>Long-wear Gel Eyeliner in Caviar ink.</b></p>
+                <div class="shopButton">
+                    <button class="blackButton">SHOP LONG-WEAR CREAM SHADOW STICK</button>
+                    <button class="blackButton">SHOP LONG-WEAR GEL EYELINER</button>
+                </div>
+            </div>
+            <div>
+                <img src="Eyeliner2.png"/>
+                <p class="smallTitle"><b>BLEND IT OUT</b></p>
+                <p>Smudge the liner with our <b>Smokey Eyeliner Brush</b> for a soft yet sultry finish.</p>
+                <div class="shopButton">
+                    <button class="blackButton">SHOP SMOKEY EYELINER BRUSH</button>
+                </div>
+            </div>
+            <div>
+                <img src="Eyeliner3.png"/>
+                <p class="smallTitle"><b>TURN UP THE VOLUME</b></p>
+                <p>Comb <b>Smokey Eye Mascara</b> from root to tip for streched-out, volumised lashes.</p>
+                <div class="shopButton">
+                    <button class="blackButton">SHOP SMOKEY EYE MASCARA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-3 End -->
+
+    <!-- Container-4 Start -->
+    <div id="container4">
+       <div id="video">
+        <img src="Palette.png">
+        </div>
+        <div id="text4">
+            <div>
+                <p class="title">YOU'RE ALL SET</p>
+                <p>Find everything you need to amplify your glow<br> and create go-to looks in our limited-edition sets.</p>
+                <a class="shopSets" href="./paletteSets.html">
+                    <button>SHOP SETS</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Container-4 End -->
+
+    <!-- Container-5 Start -->
+    <div id="container5">
+        <div id="text5">
+            <div>
+                <p class="title">CONNECT <br>WITH A PRO</p>
+                <p>Take your undereye routine to the next level: Book a complimentary Virtual Artistry Consultation to discover personalized tips, tricks, and color-true shades for your best and brightest eyes.</p>
+                <button class="whiteButton">BOOK NOW</button>
+            </div>
+        </div>
+        <div id="photo5">
+            <div>
+                <img src="Consultant.jpg">
+            </div>
+        </div>
+    </div>
+    <!-- Container-5 End -->
+
+    <!-- Container-6 Start -->
+    <div id="container6">
+        <div class="titleBox" id="title6">
+            <p class="titleTop">VIRTUAL ARTISTY CONSULTATIONS</p>
+            <p class="title">LEARN FROM THE PROS</p>
+            <p>From trying a new shade to learning new tips, our artists <br>are here to help with complimentary video sessions.</p>
+        </div>
+        <div id="body6">
+            <div>
+                <img src="VideoCall.jpg">
+                <p class="paraTop">30 MIN</p>
+                <p class="paraTitle">LOOK FRESH FOR VIDEO CALLS</p>
+                <p>Learn how to look bright eyed and fresh faced in minutes with our pro tips.</p>
+                <button class="blackButton blackMargin">BOOK NOW</button>
+            </div>
+            <div>
+                <img src="UnderEye.png">
+                <p class="paraTop">15 MIN</p>
+                <p class="paraTitle">CORRECT & CONCEAL</p>
+                <p>Look less tired by neutralizing undereye circles to look instantly more awake and bright-eyed using our new Skin Corrector Stick & Skin Concealer Stick.</p>
+                <button class="blackButton blackMargin">BOOK NOW</button>
+            </div>
+            <div>
+                <img src="Apply.jpg">
+                <p class="paraTop">30 MIN</p>
+                <p class="paraTitle">CUSTOMIZE YOUR SKIN CARE ROUTINE</p>
+                <p>Learn how to address your top skin concerns with a professionalized routine curated by an artist.</p>
+                <button class="blackButton blackMargin">BOOK NOW</button>
+            </div>
+        </div>
+    </div>
+    <!-- Container-6 End -->
+
+    <!-- Container-7 Start -->
+    <div id="container7">
+        <div class="titleBox">
+            <p class="title">#COMMUNITY</p>
+            <p>Looking fresh-faced? Let's see it. Mention and share.</p>
+        </div>
+        <div id="body7">
+            <div>
+                <img src="Makeup.jpg">
+                <div class="content7">@kamiiilamakeup</div>
+            </div>
+            <div>
+                <img src="Lipstick.jpeg">
+                <div class="content7">@romyglow</div>
+            </div>
+            <div>
+                <img src="Red.png">
+                <div class="content7">@paulaosma</div>
+            </div>
+            <div>
+                <img src="Eye.jpg">
+                <div class="content7">@pro_jp_miki.fujima</div>
+            </div>
+        </div>
+        <div><button class="blackButton marginExtra extraWidth"><img src="Camera.png" id="camera"> SHARE YOUR LOOK</button></div>
+        <div class="marginExtra"><a id="link7" class="black" href="">VIEW GALLERY</a></div>
+    </div>
+    <!-- Container-7 End -->
+
+    <!-- Container-8 Start -->
+    <div id="container8">
+        <div>
+            <img src="Blush.png">
+            <p class="bold">CHAT NOW</p>
+            <p>Chat with a makeup artist to get product recommendations.</p>
+            <a class="black small" href="">CHAT NOW</a>
+        </div>
+        <div>
+            <img src="LipGloss.png">
+            <p class="bold">FREE SHIPPING</p>
+            <p>Get free shipping on all orders $65+. Or our Club to get free shipping on all orders.</p>
+            <a class="black small" href="">LEARN MORE</a>
+        </div>
+        <div>
+            <img src="Two Foundations.png">
+            <p class="bold">WE WANT YOU TO LOVE IT</p>
+            <p>That’s why we offer free shipping and returns on all foundations, correctors, concealers, and powders.</p>
+            <a class="black small" href="">LEARN MORE</a>
+        </div>
+        <div>
+            <img src="Offer.jpeg">
+            <p class="bold">EXCLUSIVE OFFERS</p>
+            <p>Special somethings, just for you.</p>
+            <a class="black small" href="">GET OFFERS</a>
+        </div>
+    </div>
+    <!-- Container-8 End -->
+
+    <!-- Footer Start -->
+    <div id="footer">
+        <div id="footerContents">
+            <div id="footerLeft">
+                <div>
+                    <p class="bold">NEED HELP?</p>
+                    <div><a href="" class="mediumFont">Chat with an Artist</a></div>
+                    <div><a href="" class="titleTop">Text An Artist</a></div>
+                    <div><a href="" class="titleTop">Call Us (877)-310-9222</a></div>
+                    <div><a href="" class="titleTop">Shipping & Returns</a></div>
+                    <div><a href="" class="titleTop">FAQS</a></div>
+                    <div><a href="" class="titleTop">Careers</a></div>
+                    <select class="blackOption">
+                        <option>CHOOSE LOCATION</option>
+                    </select>
+                </div>
+                <div>
+                    
+                    <div><a href="" class="titleTop"> Access</a></div>
+                    <div><a href="" class="titleTop">My Account</a></div>
+                    <div><a href="" class="titleTop">My Orders</a></div>
+                    <div><a href="" class="titleTop">Store Locator</a></div>
+                </div>
+            </div>
+            <div id="footerRight">
+                <div id="input">
+                    <input type="text" class="blackInput blackSubmit" placeholder="ENTER YOUR EMAIL">
+                    <input type="number" class="blackInput blackSubmit" placeholder="ENTER YOUR MOBILE PHONE">
+                    <button class="blackSubmit">SUBMIT</button>
+                    <div>
+                        <p class="bold gap">FOLLOW US</p>
+                        <i class="fa-brands fa-facebook-f footerIcons"></i>
+                        <i class="fa-brands fa-twitter footerIcons"></i>
+                        <i class="fa-brands fa-youtube footerIcons"></i>
+                        <i class="fa-brands fa-instagram footerIcons"></i>
+                        <i class="fa-brands fa-pinterest footerIcons"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footerBottom">
+            <div>
+                <p>© Beauty Elixer Professional Cosmetics, Inc. All worldwide rights reserved.</p>
+            </div>
+            <div id="bottomTabs">
+                <div>
+                    <div><a>Terms & Conditions</a></div>
+                    <div><a>California Do Not Sell My Personal Information</a></div>
+                    <div><a>Accessibility</a></div>
+                </div>
+                <div>
+                    <div><a>Interest Based Ads</a></div>
+                    <div><a>Privacy Policy</a></div>
+                </div>
+                <div id="bottomIcon"><img src="Bottom Icon.png"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+</body>
+</html>
+
+<script src="index.js"></script>

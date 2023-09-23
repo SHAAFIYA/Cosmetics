@@ -1,0 +1,13 @@
+function redirectToIndex() {
+    // Get the value of the username input
+    var username = document.getElementsByName("username")[0].value;
+    
+    // Check if the username contains the '@' symbol (basic email validation)
+    if (username.includes('@')) {
+        // Redirect to the index.html page if it's considered an email
+        window.location.href = "index.html";
+    } else {
+        // Show an "Invalid Credentials" notification
+        alert("Invalid Credentials");
+    }
+}

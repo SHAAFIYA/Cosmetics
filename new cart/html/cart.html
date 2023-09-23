@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="https://kit.fontawesome.com/32f181d7c4.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div id="header">
+        <div id="top">
+            <div id="left">
+
+            </div>
+            <div id="center">
+                <div id="title">
+                    <a href="index.html"><img src="../image/logo.png"></a>
+                </div>
+
+            </div>
+            <div id="right">
+                <div class="rightImage"><a href="cart.html"><img src="../image/Bag-White.png"></a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Box Start -->
+    <div id="box">
+        <!-- Left Box Start -->
+        <div id="leftBox">
+
+            <div class="boxTitle">
+                <p class="boxHead">SHOPPING BAG</p>
+            </div>
+
+
+
+            <!-- Additon of Cart Items -->
+            <table id="table">
+                <thead id="tableHead">
+                    <tr>
+                        <td>PRODUCT</td>
+                        <td></td>
+                        <td>QUANTITY</td>
+
+                        <td>PRICE</td>
+                        <td id="rightAlign">TOTAL</td>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+
+            <div>
+                <button onclick="clearCart()">Clear Cart</button>
+            </div>
+
+            <!-- Checkout -->
+            <div class="checkout">
+                <div class="leftCheck">
+                    <p>SUBTOTAL</p>
+                </div>
+                <div class="rightCheck">
+                    <p id="grandTotal">0</p>
+                </div>
+            </div>
+
+
+            <div>
+                <a href="success.html"><button class="blackButton">CHECKOUT</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- Left Box End -->
+    <!-- Right Box Start -->
+    <div id="rightBox">
+        <div id="rightBox1">
+
+            <div id="Price">
+                <div class="PriceTable">
+                    <div>SUB TOTAL</div>
+                    <div id="subTotal">0</div>
+                </div>
+
+                <div class="PriceTable totalPrice">
+                    <div>ESTIMATED TOTAL</div>
+                    <div id="total">0</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Right Box End -->
+    </div>
+
+
+    <!-- Footer Start -->
+    <div id="footer">
+        <div id="footerBottom">
+            <div>
+                <p>© Beauty Elixer Professional Cosmetics, Inc. All worldwide rights reserved.</p>
+            </div>
+            <div id="bottomTabs">
+                <div>
+                    <div><a>Terms & Conditions</a></div>
+                    <div><a>Do Not Sell My Personal Information</a></div>
+                    <div><a>Accessibility</a></div>
+                </div>
+                <div>
+                    <div><a>Interest Based Ads</a></div>
+                    <div><a>Privacy Policy</a></div>
+                </div>
+                <div id="bottomIcon"><img src="../image/Bottom Icon.png"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer End -->
+</body>
+
+</html>
+
+<script src="../js/cart.js"></script>

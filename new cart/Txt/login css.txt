@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.login-container {
+    background-color: transparent;
+
+    padding: 40px; /* Increase padding for more spacing inside the white border */
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    width: 200%;
+    max-width: 400px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-container {
+    text-align: center; 
+    margin-bottom: 50px;
+
+}
+.login-container img {
+    width: 500px; 
+  
+   
+}
+
+.login-container h1 {
+    color: white;
+    font-size: 35px; /* Increase font size for the title */
+    padding-bottom: 55px; /* Reduce padding for the title */
+}
+
+.login-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 17px; 
+}
+
+/* Style the input boxes with white border */
+input[type="text"],
+input[type="password"] {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 15px; /* Increase padding for the input boxes */
+    border-radius: 5px;
+    width: 350px;
+    margin-bottom: 20px; /* Increase margin for spacing between input boxes */
+    color: white;
+    font-size: 16px; /* Increase font size for the input boxes */
+}
+

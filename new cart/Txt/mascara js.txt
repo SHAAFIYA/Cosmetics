@@ -1,0 +1,245 @@
+
+var cartArr = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+var productDetails = [
+    {   
+        anc: "",
+        image:"M1.jpg", 
+        name: "NARS",
+        details: "Nars Climax Dramatic volumizing Mascara",
+        price: 250,
+    },
+    {   
+        anc: "",
+        image: "M2.jpg",
+        name: "RIMMELs",
+        details: " Extra Super Lash Building Mascara",
+        price: 300,
+    },
+    {   
+        anc: "",
+        image: "M3.webp",
+        name: "NAITO",
+        details: "Super Long Lash Mascara ",
+        price: 450,
+    }
+    ,
+    {   
+        anc: "",
+        image: "M4.webp",
+        name: "EYECINIC",
+        details: "Lash Cruling Mascara",
+        price: 500,
+    },    
+    {   
+        anc: "",
+        image: "M5.webp",
+        name: "COLORBAR",
+        details: " Smooth & Light Weight",
+        price: 399,
+    },    
+    {   
+        anc: "",
+        image: "M6.webp",
+        name: "DIORSHOW",
+        details: " Las Extension Effect Volume",
+        price: 699,
+    }, 
+    {   
+        anc: "",
+        image: "M7.jpg",
+        name: " MISS ROSE",
+        details: "Natural Water Proof Mascara ",
+        price: 540,
+    },    
+    {   
+        anc: "",
+        image: "M8.jpg",
+        name: "SNAPSCARA",
+        details: "Best Fibre Mascara ",
+        price: 799,
+    },    
+    {   
+        anc: "",
+        image: "M9.jpg",
+        name: "KUSH MASCARA",
+        details: "mooth-free, transfer -proof finish",
+        price: 800,
+    },       
+    {   
+        anc: "",
+        image: "M10.png",
+        name: "KOSAS",
+        details: "Hypoallergenic,Lengthening,Nourishing",
+        price: 390,
+    },    
+    {   
+        anc: "",
+        image: "M11.jpg",
+        name: "AIR Volume",
+        details: "Separating",
+        price: 199,
+    },   
+     {   
+        anc: "",
+        image: "M12.jpg",
+        name: "MABELLINE ",
+        details: "High Volume and Nourishing",
+        price:550,
+    },   
+     {   
+        anc: "",
+        image: "M13.webp",
+        name: "SUGAR",
+        details: "Growth of your natural lashes,fuels on regular use",
+        price:299,
+    },  
+    {   
+        anc: "",
+        image: "M14.jpg",
+        name: "Las LOVING",
+        details: "Easy-to-use, long lasting",
+        price: 900,
+    },    
+    {   
+        anc: "",
+        image: "M15.jpeg",
+        name: "GLOSSIER",
+        details: "Lengthening",
+        price: 875,
+    },
+    {   
+        anc: "",
+        image: "M16.webp",
+        name: "GLOSSAL",
+        details: "Volumizing",
+        price: 700,
+    },
+    {   
+        anc: "",
+        image: "M17.png",
+        name: "Dior DIORSHOW",
+        details: "Softening and Thickening",
+        price: 470,
+    },
+    {   
+        anc: "",
+        image: "M18.png",
+        name: "L'Oreal Telescopic",
+        details: "Separating and Lengthening",
+        price: 689,
+    },
+    {   
+        anc: "",
+        image: "M19.png",
+        name: "LASH PARADISE",
+        details: "Full Lash Fringe, Feathery Soft",
+        price: 379,
+    },
+    {   
+        anc: "",
+        image: "M20.png",
+        name: "SKY HIGH",
+        details: "Curling,Lengthening,Nourishing,Volume,Volumizing",
+        price: 999,
+    },
+   
+]
+
+productDetails.map(function(elem,index){
+
+
+    var head = document.createElement("div");
+
+    var anc = document.createElement("a");
+    anc.setAttribute("href", elem.anc);
+
+    var image = document.createElement("img");
+    image.setAttribute("src", elem.image);
+
+    anc.append(image);
+
+    var name = document.createElement("h4");
+    name.innerText = elem.name;
+
+    var details = document.createElement("p")
+    details.innerText = elem.details;
+
+    var star1 = document.createElement("span");
+    star1.setAttribute("class","material-icons-outlined");
+    
+    var star2 = document.createElement("span");
+    star2.setAttribute("class","material-icons-outlined");
+    
+    var star3 = document.createElement("span");
+    star3.setAttribute("class","material-icons-outlined");
+    
+    var star4 = document.createElement("span");
+    star4.setAttribute("class","material-icons-outlined");
+    
+    var star5 = document.createElement("span");
+    star5.setAttribute("class","material-icons-outlined");
+    
+
+    var star6 = document.createElement("span");
+    
+
+    var starMain = document.createElement("p");
+    starMain.setAttribute("class","rating");
+    starMain.append(star1,star2,star3,star4,star5,star6);
+    
+    var price = document.createElement("p");
+    price.innerText = "₹" + elem.price + ".00";
+
+    var button = document.createElement("button");
+    button.innerText = "ADD TO BAG";
+    button.addEventListener("click",function(){
+        addToBag(elem);
+    })
+
+    head.append(anc,name,details,starMain,price,button);
+    document.querySelector("#body").append(head);
+    
+    
+    // Add To Bag
+    function addToBag(elem){
+        elem.quantity = 1;
+        cartArr.push(elem);
+        // cartArr.push("new");
+        localStorage.setItem("cartItems",JSON.stringify(cartArr));
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Get references to the search input and search button
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+
+    // Event listener for the search button click
+    searchButton.addEventListener("click", function () {
+        // Get the user's search input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Define a mapping of search terms to corresponding HTML pages
+        const searchMappings = {
+            mascara: "mascara.html",
+            eyeliner: "eyeliner.html",
+            blush: "blush.html",
+            powder: "powder.html",
+            foundation : "foundation.html",
+            lipstick : "lipstick.html",
+            eyeshadow : "eyeshadow.html",
+            kajal : "kajal.html"
+
+            // Add more mappings for other products as needed
+        };
+
+        // Check if the search term exists in the mapping
+        if (searchMappings.hasOwnProperty(searchTerm)) {
+            // Redirect the user to the corresponding HTML page
+            window.location.href = searchMappings[searchTerm];
+        } else {
+            // Handle the case where the search term is not found
+            alert("Product not found. Please try a different search term.");
+        }
+    });
+});

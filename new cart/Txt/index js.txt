@@ -1,0 +1,35 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get references to the search input and search button
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+
+    // Event listener for the search button click
+    searchButton.addEventListener("click", function () {
+        // Get the user's search input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Define a mapping of search terms to corresponding HTML pages
+        const searchMappings = {
+            mascara: "mascara.html",
+            eyeliner: "eyeliner.html",
+            blush: "blush.html",
+            powder: "powder.html",
+            foundation : "foundation.html",
+            lipstick : "lipstick.html",
+            eyeshadow : "eyeshadow.html",
+            kajal : "kajal.html"
+
+            // Add more mappings for other products as needed
+        };
+
+        // Check if the search term exists in the mapping
+        if (searchMappings.hasOwnProperty(searchTerm)) {
+            // Redirect the user to the corresponding HTML page
+            window.location.href = searchMappings[searchTerm];
+        } else {
+            // Handle the case where the search term is not found
+            alert("Product not found. Please try a different search term.");
+        }
+    });
+});

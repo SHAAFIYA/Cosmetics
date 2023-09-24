@@ -38,8 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $productDetails = [
             "name" => $row["product_name"],
             "price" => $price,
-            "image_name" => $row["image_name"],
-            "image_type" => $row["image_type"]
+            "image_name" => $row["image_name"]
         ];
         echo json_encode($productDetails);
     } else {

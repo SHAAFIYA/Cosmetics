@@ -9,7 +9,9 @@ body {
     height: 100vh;
     flex-direction: column;
 }
-
+.righttext{
+    color: white;
+  }
 .login-container {
     background-color: transparent;
     padding: 30px; /* Increase padding for more spacing inside the white border */

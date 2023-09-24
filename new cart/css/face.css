@@ -10,7 +10,9 @@ body {
 button:hover {
   cursor: pointer;
 }
-
+.righttext{
+  color: white;
+}
 /* Header */
 body {
   font-family: "BBText Regular",Helvetica,Arial,sans-serif;

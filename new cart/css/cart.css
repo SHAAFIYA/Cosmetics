@@ -87,6 +87,9 @@ img {
 .rightImage {
     height: 20px;
 }
+.righttext{
+    color: white;
+  }
 .rightImage>a>img {
     height: 100%;
 }

@@ -141,7 +141,9 @@ img {
     height: 100%;
 }
 /* Header End */
-
+.righttext{
+  color: white;
+}
 /* Body */
 
 .button {

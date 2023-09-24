@@ -163,54 +163,7 @@ var productDetails = [
         rating : 4.1,
         price: 1230,
     },
-    {   
-        anc: "",
-        image: "loreal carmel beige.jpg",
-        name: "LOREAL PARIS FOUNDATION",
-        details: "Infallible matte finish foundation",
-        rating : 3.9,
-        price: 750,
-    },
-    {   
-        anc: "",
-        image: "l.jpg",
-        name: "LOREAL PARIS FOUNDATION",
-        details: "Foundation with SPF 17 protect from sun",
-        rating : 4.3,
-        price: 2308,
-    },
-    {   
-        anc: "",
-        image: "my glamm oil foundation.jpg",
-        name: "MY GLAMM OIL CONTROL FOUNDATION",
-        details: "Suitable f0r oily face",
-        rating : 3.8,
-        price: 995,
-    },
-    {   
-        anc: "",
-        image: "my glamm serum foundation.jpg",
-        name: "MY GLAMM GLOW SERUM FOUNDATION",
-        details: "Combination of foundation and serum",
-        rating : 4.2,
-        price: 524,
-    },
-    {   
-        anc: "",
-        image: "lakme waterproof marble.jpg",
-        name: "LAKME PRIMER + MATTE FOUNDATION",
-        details: "Free from fear of sweating",
-        rating : 4.1,
-        price: 236,
-    },
-    {   
-        anc: "",
-        image: "mg hd.jpg",
-        name: "MY GLAMM STICK FOUNDATION",
-        details: "Easy-to-use, long-lasting",
-        rating : 3.7,
-        price: 509,
-    },
+    
 ]
 
 productDetails.map(function(elem,index){

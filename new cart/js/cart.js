@@ -1,95 +1,74 @@
-var cartArr = JSON.parse(localStorage.getItem("cartItems")) || [];
+document.addEventListener("DOMContentLoaded", function () {
+    displayCartItems();
+});
 
 function displayCartItems() {
-    document.getElementById("tableBody").innerHTML = "";
+    console.log("Cart Function called")
+    const email = sessionStorage.getItem('email');
+    fetch("../php/getCartData.php", {
+        method: "POST",
+        body: JSON.stringify({ email: email }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then((response) => response.json())
+        .then((cartData) => {
+            console.log("cart data php is worked")
+            console.log(cartData)
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
 
-    cartArr.map(function(elem, index) {
-        var row = document.createElement("tr");
+            cartData.forEach((item) => {
+                console.log(item.product_name)
+                fetch("../php/getProductDetails.php", {
+                    method: "POST",
+                    body: JSON.stringify({ product_name: item.product_name }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((productDetails) => {
+                        console.log("product details php is worked")
+                        console.log(productDetails)
+                        const row = document.createElement("tr");
 
-        var image = document.createElement("img");
-        image.setAttribute("src", elem.image);
+                        const imageCell = document.createElement("td");
+                        const productImage = document.createElement("img");
 
-        var photo = document.createElement("td");
-        photo.append(image);
+                        productImage.src = "../image/" + productDetails.image_name;
 
-        var name = document.createElement("td");
-        name.innerText = elem.name.toUpperCase();
+                        productImage.alt = productDetails.name;
+                        imageCell.appendChild(productImage);
 
-        var quantity = document.createElement("td");
+                        const nameCell = document.createElement("td");
+                        nameCell.innerText = productDetails.name;
 
-        deductButton = document.createElement("button");
-        deductButton.innerText = "-";
-        deductButton.setAttribute("class", "quantityButton");
-        deductButton.addEventListener("click", function() {
-            decreaseQuantity(index);
+                        const quantityCell = document.createElement("td");
+                        quantityCell.innerText = item.quantity;
+
+                        const priceCell = document.createElement("td");
+                        priceCell.innerText = "₹" + productDetails.price.toFixed(2);
+
+                        const totalCell = document.createElement("td");
+                        const total = productDetails.price * item.quantity;
+                        totalCell.innerText = "₹" + total.toFixed(2);
+
+                        row.appendChild(imageCell);
+                        row.appendChild(nameCell);
+                        row.appendChild(quantityCell);
+                        row.appendChild(priceCell);
+                        row.appendChild(totalCell);
+
+                        tableBody.appendChild(row);
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching product details: " + error);
+                    });
+            });
         })
-
-        quantity.textContent = elem.quantity;
-
-        var addButton = document.createElement("button");
-        addButton.innerText = "+";
-        addButton.setAttribute("class", "quantityButton");
-        addButton.addEventListener("click", function() {
-            increaseQuantity(index)
+        .catch((error) => {
+            console.error("Error fetching cart data: " + error);
         });
-        quantity.append(deductButton, addButton);
-
-        var price = document.createElement("td");
-        price.innerText = "₹" + elem.price + ".00";
-
-        var total = document.createElement("td");   
-        total.innerText = "₹" + (elem.price * elem.quantity) + ".00";
-
-        row.append(photo, name, quantity, price, total);
-        document.getElementById("tableBody").append(row);
-    });
-
-    // Update the totals
-    updateTotal();
-}
-
-// Call the displayCartItems function to initially populate the cart
-displayCartItems();
-
-function updateTotal() {
-    var subTotal = cartArr.reduce(function(acc, elem) {
-        return acc + (elem.price * elem.quantity);
-    }, 0);
-
-
-// Update Subtotal, Estimated Total, and Grand Total
-document.getElementById("subTotal").textContent = "₹" + subTotal.toFixed(4);
-document.getElementById("total").textContent = "₹" + subTotal.toFixed(4);
-document.getElementById("grandTotal").textContent = "₹" + subTotal.toFixed(4);
-document.getElementById("Total").textContent = "₹" + subTotal.toFixed(4);
-
-}
-
-function decreaseQuantity(index) {
-    cartArr[index].quantity--;
-    if (cartArr[index].quantity < 1) {
-        // Remove the item if quantity becomes zero or negative
-        cartArr.splice(index, 1);
-    }
-    localStorage.setItem("cartItems", JSON.stringify(cartArr));
-
-    displayCartItems();
-}
-
-function increaseQuantity(index) {
-    cartArr[index].quantity++;
-    localStorage.setItem("cartItems", JSON.stringify(cartArr));
-
-    displayCartItems();
-}
-function clearCart() {
-    // Clear the cart array
-    cartArr = [];
-    
-    // Clear cart items in localStorage
-    localStorage.removeItem("cartItems");
-    
-    // Update the cart display and totals
-    displayCartItems();
-    updateTotal();
 }

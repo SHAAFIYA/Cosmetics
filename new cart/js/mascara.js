@@ -224,7 +224,7 @@ productDetails.map(function(elem,index){
     var button = document.createElement("button");
     button.innerText = "ADD TO BAG";
     button.addEventListener("click",function(){
-        var productname=elem.name
+        var productname=elem.details
         AddToCart(productname);
     })
 

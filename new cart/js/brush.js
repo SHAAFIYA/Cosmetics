@@ -232,20 +232,11 @@ productDetails.map(function(elem,index){
     var button = document.createElement("button");
     button.innerText = "ADD TO BAG";
     button.addEventListener("click",function(){
-        addToBag(elem);
+        var productname=elem.name
+        AddToCart(productname);
     })
-
     head.append(anc,name,details,starMain,price,button);
     document.querySelector("#body").append(head);
-    
-    
-    // Add To Bag
-    function addToBag(elem){
-        elem.quantity = 1;
-        cartArr.push(elem);
-        // cartArr.push("new");
-        localStorage.setItem("cartItems",JSON.stringify(cartArr));
-    }
 });
 document.addEventListener("DOMContentLoaded", function () {
     

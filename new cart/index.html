@@ -139,12 +139,7 @@
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.success) {
-
-                        alert("Registration successful!");
-
                         sessionStorage.setItem('email', email);
-
-
                         window.location.href = "html/home.html";
                     } else {
                         alert("Registration failed. Please try again.");
